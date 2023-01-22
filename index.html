@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de café</title>
+
+    <!-- descripcion del proyecto, ayuda para la puntuacion del posicionamiento SEO -->
+    <meta name="description" content="Página web de blog de café">
+
+    <!-- prefetch -> va a cargar la siguente pagina a la cual el usuario iria, para que la navegacion sea mas rapida (una herramienta para medir esto es google analytics) -->
+    <link rel="prefetch" href="nosotros.html" as="document">
+
+    <!-- preload -> cargara mas rapdidamente los elementos que especifiques (en este caso, lo use para hojas de estilo y la libreria externa google fonts) -->
+
+    <!-- normalize -->
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- google fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- custom styles -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- <link rel="preload" href="img/blog1.jpg" ass="image"> -->
+
+    <!-- 
+    VIDEO 99
+    MODERNIZR (https://modernizr.com/) 
+    - modernizr es una libreria de javascript que va a detectar las caracetristicas de un navegador
+    - podemos usarlo de la siguiente manera
+    - si soporta tal cosa ejecutamos cierto codigo
+    - si no soporta esa cosa ejecutamos otro codigo
+    - generamos un script en la web de modernizr para los .webp
+    - incluimos modernizr al proyecto con la etiqueta <script> (es un archivo .js)
+    - esta libreria detectara las caracteristicas del navegador desde el cual se esta accediendo a nuestra web
+    - en base a esto, agregara una clase .webp (si el navegador soporta archivos .webp) o no-webp (si no los soporta) en el <html> de la pagina
+    - de esta manera podemos "programar" el css para que, por ejemplo, un background-image cargue una imagen .webp como primera opcion (si el navegador soporta el formato, es decir, si existe <html class="webp">) y .jpg como segunda (si el navegador no soporta el formato, es decir <html class="no-webp">)
+    -->
+
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor">
+            <div class="barra">
+                <a href="index.html" class="logo">
+                    <h1 class="logo__nombre centrar-texto no-margin">Blog<span class="logo__bold">DeCafé</span></h1>
+                </a>
+                <nav class="navegacion">
+                    <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+                    <a href="cursos.html" class="navegacion__enlace">Cursos</a>
+                    <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+                </nav>
+            </div>
+        </div>
+        <div class="header__texto">
+            <h2 class="no-margin">Blog de café con consejos y cursos</h2>
+            <p class="no-margin">Aprende de los expertos con las mejores recetas y consejos</p>
+        </div>
+    </header>
+
+    <div class="contenedor contenido-principal">
+        <main class="blog">
+            <h3>Nuestro Blog</h3>
+            <article class="entrada">
+                <div class="entrada__imagen">
+                    
+                    <picture>
+                        <source loading="lazy" srcset="img/blog1.webp" type="image/webp">
+                        <img src="img/blog1.jpg" alt="imagen blog" loading="lazy">
+                    </picture>
+
+                </div>
+                <div class="entrada__contenido">
+                    <h4 class="no-margin">Tipos de Grano de Café</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, rerum, reprehenderit consequatur perferendis officia, vitae fuga animi temporibus itaque atque reiciendis ea excepturi! Molestias aperiam fugiat deleniti laudantium atque numquam?</p>
+                </div>
+                <a href="entrada.html" class="boton boton--primario">Leer Entrada</a>
+            </article>
+            <article class="entrada">
+                <div class="entrada__imagen">
+
+                    <picture>
+                        <source loading="lazy" srcset="img/blog2.webp" type="image/webp">
+                        <img src="img/blog2.jpg" alt="imagen blog" loading="lazy">
+                    </picture>
+                    
+                </div>
+                <div class="entrada__contenido">
+                    <h4 class="no-margin">3 Deliciosas Recetas de Café</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, rerum, reprehenderit consequatur perferendis officia, vitae fuga animi temporibus itaque atque reiciendis ea excepturi! Molestias aperiam fugiat deleniti laudantium atque numquam?</p>
+                </div>
+                <a href="entrada.html" class="boton boton--primario">Leer Entrada</a>
+            </article>
+            <article class="entrada">
+                <div class="entrada__imagen">
+
+                    <picture>
+                        <source loading="lazy" srcset="img/blog3.webp" type="image/webp">
+                        <img src="img/blog3.jpg" alt="imagen blog" loading="lazy">
+                    </picture>
+                    
+                </div>
+                <div class="entrada__contenido">
+                    <h4 class="no-margin">Beneficios del Café</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, rerum, reprehenderit consequatur perferendis officia, vitae fuga animi temporibus itaque atque reiciendis ea excepturi! Molestias aperiam fugiat deleniti laudantium atque numquam?</p>
+                </div>
+                <a href="entrada.html" class="boton boton--primario">Leer Entrada</a>
+            </article>
+        </main>
+        <aside class="sidebar">
+            <h3>Nuestros Cursos y Talleres</h3>
+            <ul class="cursos no-padding">
+                <li class="widget-curso">
+                    <h4 class="no-margin">Técnicas de Extracción de Café</h4>
+                    <p class="widget-curso__label">
+                        Precio: <span class="widget-curso__info">Gratis</span>
+                    </p>
+                    <p class="widget-curso__label">
+                        Cupo: <span class="widget-curso__info">20</span>
+                    </p>
+                    <a href="cursos.html" class="boton boton--secundario">+ Info</a>
+                </li>
+                <li class="widget-curso">
+                    <h4 class="no-margin">4 Recetas de Café para Principiantes</h4>
+                    <p class="widget-curso__label">
+                        Precio: <span class="widget-curso__info">Gratis</span>
+                    </p>
+                    <p class="widget-curso__label">
+                        Cupo: <span class="widget-curso__info">20</span>
+                    </p>
+                    <a href="cursos.html" class="boton boton--secundario">+ Info</a>
+                </li>
+            </ul>
+        </aside>    
+    </div>
+    <footer class="footer">
+        <div class="contenedor">
+            <div class="barra">
+                <a href="index.html" class="logo">
+                    <h1 class="logo__nombre centrar-texto no-margin">Blog<span class="logo__bold">DeCafé</span></h1>
+                </a>
+                <nav class="navegacion">
+                    <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+                    <a href="cursos.html" class="navegacion__enlace">Cursos</a>
+                    <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- modernizr -->
+    <script src="js/modernizr.js"></script>
+</body>
+</html>

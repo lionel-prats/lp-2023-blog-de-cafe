@@ -1,0 +1,315 @@
+:root {
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+
+    --primario: #784D3C;
+    --blanco: #fff;
+    --gris: #E1E1E1;
+    --negro: #000;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1rem = 10px */
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit; /* inherit hereda del elemento padre */
+}
+body {
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/* globales */
+.contenedor {
+    /* 
+    width: 90%;
+    max-width: 120rem; 
+    */
+    width: min(90%, 120rem); /* se va aplicar el valor minimo en cada resolucion */
+    margin: 0 auto;
+}
+a { text-decoration: none; }
+h1, h2, h3, h4 { 
+    font-family: var(--fuenteHeading); 
+    line-height: 1.2;
+}
+h1 { font-size: 4.8rem;}
+h2 { font-size: 4rem; }
+h3 { font-size: 3.2rem; }
+h4 { font-size: 2.8rem; }
+img { max-width: 100%;  }
+
+/* utilidades */
+.no-padding { padding: 0;}
+.no-margin { margin: 0; }
+.centrar-texto { text-align: center; }
+
+/* ----- index.html ------ */
+
+/* header */
+
+.webp .header {
+    background-image: url("../img/banner.webp");
+}
+.no-webp .header {
+    background-image: url("../img/banner.jpg");
+}
+.header {
+    height: 50rem;
+    padding-top: 3rem;
+    margin-bottom: 2rem;
+    background-size: cover; /* la imagen se estira en width y height hasta cubrir la superficie del elemento */
+    background-repeat: no-repeat; /* el valor por defecto es repeat, se lo quitamos */
+    background-position: center center; /* inicamos que la imagen siempre este centrada como fondo - sirve para el responsive web design */
+}
+@media (min-width: 768px) {
+    .barra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.logo {
+    color: var(--blanco);
+}
+.logo__nombre {
+    font-weight: 400;
+}
+.logo__bold {
+    font-weight: 700;
+}
+.navegacion {
+    margin-top: 2rem;
+}
+@media (min-width: 768px) {
+    .navegacion {
+        display: flex;
+        column-gap: 2rem;
+        margin-top: 0;
+    }
+}
+.navegacion__enlace {
+    display: block;
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--blanco);
+}
+.header__texto {
+    margin-top: 5rem;
+    text-align: center;
+    color: var(--blanco);
+}
+.header__texto h2 {
+    margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+    .header__texto {
+        margin-top: 15rem;
+        line-height: 3;
+    }
+    .header__texto h2 {
+        margin-bottom: 0;
+    }
+}
+/* contenido principal */
+@media (min-width: 768px) {
+    .contenido-principal {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+}
+/* blog */
+.entrada {
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+/* 
+.entrada:last-of-type {} selecciona el ultimo elemento .entrada dentro de cada elemento contenedor que haya en el <html>, en este caso, elque está dentro del elemento contenedor <div class="blog"> 
+*/
+.entrada:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.boton {
+    display: block;
+    width: 100%;
+    padding: 1rem 3rem;
+    border: none;
+    margin-bottom: 2rem;
+    font-family: var(--fuenteHeading);
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--blanco);
+}
+@media (min-width: 768px) {
+    .boton {
+        display: inline-block;
+        width: auto;
+    }
+}
+.boton:hover {
+    cursor: pointer;
+}
+.boton--primario {
+    background-color: var(--negro);
+}
+.boton--secundario {
+    background-color: var(--primario);
+}
+
+/* sidebar */
+.cursos {
+    list-style: none;
+}
+.widget-curso {
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.widget-curso:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.widget-curso__label,
+.curso__label {
+    font-family: var(--fuenteHeading);
+    font-size: 2rem;
+    font-weight: bold; /* bold == 700 */
+}
+.widget-curso__info,
+.curso__info {
+    font-weight: normal; /* normal == 400 */
+}
+
+
+/* footer */
+.footer {
+    padding: 3rem 0;
+    margin-top: 4rem;
+    background-color: var(--negro)
+}
+
+/* ----- nosotros.html ----- */
+
+@media (min-width: 768px) {
+    .sobre-nosotros {
+        display: flex;
+        justify-content: space-between;
+    }    
+    .sobre-nosotros__imagen,
+    .sobre-nosotros__texto {
+        flex: 0 0 calc(50% - 1rem); 
+    }
+    /* 
+    opcion con grid para maquetar el contenido principal 
+    .sobre-nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    } 
+    */
+}
+
+/* ----- curso.html ----- */
+
+.curso {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+}
+
+.curso:last-of-type {
+    border-bottom: none;
+}
+
+@media (min-width: 768px) {
+    .curso {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+}
+
+/* ----- entrada.html ----- */
+
+@media (min-width: 1200px) {
+    .contenedor-entrada {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+/* ----- contacto.html ----- */
+
+.webp .contacto-bg {
+    background-image: url(../img/contacto.jpg);
+}
+.no-webp .contacto-bg {
+    background-image: url(../img/contacto.jpg);
+}
+.contacto-bg {
+    height: 40rem;
+    background-repeat: no-repeat;
+    block-size: cover;
+    background-position: center center;
+}
+
+.formulario {
+    width: 95%;
+    padding: 5rem;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    margin: -5rem auto 0 auto;
+    background-color: var(--blanco);
+}
+
+.campo {
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .campo {
+        display: flex;
+        column-gap: 2rem;;
+    } 
+}
+
+.campo__label {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .campo__label {
+        flex: 0 0 9rem;
+        /* padding-right: 2rem;  */
+        /* 
+        misma funcion que "column-gap: 2rem;" en .campo
+        gracias al "box-sizing: border-box;" en html {} no variara si width
+        es opcion por si falla el soporte de column-gap en algun navegador
+        lo que si el texto del label se vera 2 rem corrido a la izquierda en caso de aplicarlo, asi que la opcion seria usar 1 u otro si no quiero que no varie el diseño
+        */
+        text-align: right;
+    }
+}
+
+.campo__field {
+    flex: 1;
+    width: 100%;
+    border: 1px solid var(--gris);
+}
+
+.campo__field--textarea {
+    height: 20rem;
+    resize: vertical;
+}
+
+.formulario .boton {
+    margin: 0 auto;
+}
